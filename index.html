@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive and Animated Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #9ce1ce;
+        }
+
+        .left-section {
+            background-image: url(imgs/sunshine\ logo.jpg); /* Replace with the path to your logo */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            flex: 1;
+        }
+
+        .right-section {
+            background-color: rgb(223, 176, 23);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .right-section p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+            }
+
+            .left-section, .right-section {
+                flex: none;
+                width: 100%;
+                height: 50vh;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-us img {
+            width: 100%;
+            height: auto;
+            animation: slideInLeft 1s;
+        }
+
+        .mission-vision {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+        }
+
+        .grid-section .card {
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .grid-section .card:hover {
+            transform: scale(1.05);
+        }
+
+        .constructed-image {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.constructed-image.enlarged {
+    transform: scale(2);
+    z-index: 10;
+    position: relative;
+}
+
+.additional-3d-images img {
+    display: block;
+}
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+       
+        .clients-section {
+            background-color: #ecec15;
+            padding: 50px 0;
+        }
+
+        .clients-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        .clients-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .clients-list li {
+            font-size: 1.2rem;
+            margin: 10px 20px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            color: #343a40;
+        }
+
+        .clients-list li:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .animated-list li {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .animated-list li:nth-child(odd) {
+            animation-delay: 0.1s;
+        }
+
+        .animated-list li:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-section {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        .contact-details {
+            font-size: 1.2rem;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .contact-details p {
+            margin: 0;
+        }
+
+        .contact-details a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .contact-details {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="left-section"></div>
+    <!-- Get in Touch Section -->
+<section class="contact-section">
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <div class="contact-details">
+            <p>Sunshine Exhibition Services Nig. Ltd</p>
+            <p>5, Ola Fathia Close</p>
+            <p>Orimedu Itu-lluwo Ikorodu</p>
+            <p>Lagos State</p>
+            <p>Phone: <a href="tel:+2348068129190">+2348068129190</a></p>
+            <p>Email: <a href="mailto:nap.sunshineexhibitionservice@gmail.com">nap.sunshineexhibitionservice@gmail.com</a></p>
+        </div>
+    </div>
+</section>
+
+</section>
+
+
+
+
+
+<!-- Grid Section -->
+<section class="grid-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">3D AND FINISHED PROJECTS</h2>
+        <div class="row">
+            <!-- First Set of Images -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/atlas/atlas3.png" class="card-img-top" alt="3D Image">
+                    <div class="card-body">
+                        <p class="card-text">3D IMAGE FOR ATLAS COPCO.</p>
+                        <button class="btn btn-primary toggle-3d-images">Show More 3D Images</button>
+                        <div class="additional-3d-images" style="display: none;">
+                            <img src="imgs/atlas/Atlas.png" class="card-img-top mt-2" alt="3D Image 1">
+                            <img src="imgs/atlas/atlas2.png" class="card-img-top mt-2" alt="3D Image 2">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <img src="imgs/atlas/Atlas copco.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND FOR ATLAS COPCO.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Second Set of Images -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/excobio3d.jpg" class="card-img-top" alt="3D Image">
+                    <div class="card-body">
+                        <p class="card-text">3D IMAGE FOR EXCBIO</p>
+                        <button class="btn btn-primary toggle-3d-images">Show More 3D Images</button>
+                        <div class="additional-3d-images" style="display: none;">
+                            <img src="grid-image2-1.jpg" class="card-img-top mt-2" alt="3D Image 1">
+                            <img src="grid-image2-2.jpg" class="card-img-top mt-2" alt="3D Image 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <img src="imgs/excobio.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND FOR EXCBIO</p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Second Set of Images -->
+             <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/BABA IJEBU 3D.png" class="card-img-top" alt="3D Image">
+                    <div class="card-body">
+                        <p class="card-text">3D IMAGE FOR BABA IJEBU</p>
+                        <button class="btn btn-primary toggle-3d-images">Show More 3D Images</button>
+                        <div class="additional-3d-images" style="display: none;">
+                            <img src="imgs/BABA IJEBU 3D (2).png" class="card-img-top mt-2" alt="3D Image 1">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <img src="imgs/BABA IJEBU F.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND BABA IJEBU</p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Second Set of Images -->
+             <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/BET CONSTRUCT3D (2).png" class="card-img-top" alt="3D Image">
+                    <div class="card-body">
+                        <p class="card-text">3D IMAGE FOR BET CONSTRUCT</p>
+                        <button class="btn btn-primary toggle-3d-images">Show More 3D Images</button>
+                        <div class="additional-3d-images" style="display: none;">
+                            <img src="imgs/BET CONSTRUCT3D.png" class="card-img-top mt-2" alt="3D Image 1">
+                            <img src="imgs/BET CONSTRUCT3D (2).png" class="card-img-top mt-2" alt="3D Image 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <img src="imgs/Bet-construct.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND FOR BET CONSTRUCT</p>
+                    </div>
+                </div>
+            </div>
+
+            
+             <!-- Second Set of Images -->
+             <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/SHANGHAI STAND 3D.png" class="card-img-top" alt="3D Image">
+                    <div class="card-body">
+                        <p class="card-text">3D IMAGE FOR SHANGHAI </p>
+                        <button class="btn btn-primary toggle-3d-images">Show More 3D Images</button>
+                        <div class="additional-3d-images" style="display: none;">
+                            <img src="imgs/SHANGHAI STAND 3D (2).png" class="card-img-top mt-2" alt="3D Image 1">
+                            <img src="imgs/SHANGHAI STAND 3D (3).png" class="card-img-top mt-2" alt="3D Image 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <img src="imgs/SHANGHAI STAND.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND FOR SHANGHAI </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Set of Images -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/BULWARK3D.png" class="card-img-top" alt="3D Image">
+                    <div class="card-body">
+                        <p class="card-text">3D IMAGE FOR BULWARK TGS  </p>
+                        <button class="btn btn-primary toggle-3d-images">Show More 3D Images</button>
+                        <div class="additional-3d-images" style="display: none;">
+                            <img src="imgs/BULWARK3D (2).png" class="card-img-top mt-2" alt="3D Image 1">
+                            <img src="imgs/BULWARK3D (3).png" class="card-img-top mt-2" alt="3D Image 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <img src="imgs/BULWARK F.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND FOR BULWARK TGS  </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Set of Images -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/TV BET3D.png" class="card-img-top" alt="3D Image">
+                    <div class="card-body">
+                        <p class="card-text">3D IMAGE FOR TV BET </p>
+                        <button class="btn btn-primary toggle-3d-images">Show More 3D Images</button>
+                        <div class="additional-3d-images" style="display: none;">
+                            <img src="imgs/TV BET3D (2).png" class="card-img-top mt-2" alt="3D Image 1">
+                            <img src="imgs/TV BET3D (3).png" class="card-img-top mt-2" alt="3D Image 2">
+                            <img src="imgs/TV BET3D (4).png" class="card-img-top mt-2" alt="3D Image 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <img src="imgs/TV BET F.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND FOR SHANGHAI </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Set of Images -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/LAGOS LOT.png" class="card-img-top" alt="3D Image">
+                    <div class="card-body">
+                        <p class="card-text">3D IMAGE FOR LAGOS LOTTERY </p>
+                        <button class="btn btn-primary toggle-3d-images">Show More 3D Images</button>
+                        <div class="additional-3d-images" style="display: none;">
+                            <img src="imgs/LAGOS LOT (5).png" class="card-img-top mt-2" alt="3D Image 1">
+                            <img src="imgs/LAGOS LOT (6).png" class="card-img-top mt-2" alt="3D Image 2">
+                            <img src="imgs/LAGOS LOT (7).png" class="card-img-top mt-2" alt="3D Image 2">
+                            <img src="imgs/LAGOS LOT (2).png" class="card-img-top mt-2" alt="3D Image 2">
+                            <img src="imgs/LAGOS LOT (3).png" class="card-img-top mt-2" alt="3D Image 2">
+                            <img src="imgs/LAGOS LOT (4).png" class="card-img-top mt-2" alt="3D Image 2">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <img src="imgs/LAGOS LOT F.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND FOR LAGOS LOTTERY </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Set of Images -->
+<div class="col-md-4">
+    <div class="card mb-4">
+        <img src="imgs/PROMATIC3D.png" class="card-img-top" alt="3D Image">
+        <div class="card-body">
+            <p class="card-text">3D IMAGE FOR PROMATIC</p>
+            <button class="btn btn-primary toggle-3d-images">Show More 3D Images</button>
+            <div class="additional-3d-images" style="display: none;">
+                <img src="imgs/PROMATIC3D (2).png" class="card-img-top mt-2" alt="3D Image 1">
+            </div>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <img src="imgs/PROMATIC F.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+        <div class="card-body">
+            <p class="card-text">FINISHED STAND FOR PROMATIC</p>
+        </div>
+    </div>
+</div>
+
+
+            <!-- Second Set of Images -->
+<div class="col-md-4">
+    <div class="card mb-4">
+        <img src="imgs/BEEPTOOL 3D.jpg" class="card-img-top" alt="3D Image">
+        <div class="card-body">
+            <p class="card-text">3D IMAGE FOR BEEPTOOL </p>
+            <button class="btn btn-primary toggle-3d-images">Show More 3D Images</button>
+            <div class="additional-3d-images" style="display: none;">
+                
+            </div>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <img src="imgs/BEEPTOOL F.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+        <div class="card-body">
+            <p class="card-text">FINISHED STAND FOR BEEPTOOL</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Grid Section 2 -->
+
+<section class="grid-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">OTHER PROJECTS BY SUNSHINE EXHIBITION SERVICE </h2>
+        <div class="row">
+            <!-- First Set of Images -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/KOENIG & BAUER.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND FOR KOENIG & BAUER.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Second Set of Images -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/GLOBAL BET.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND FOR GLOBAL BET</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Third Set of Images -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/BET CONSTRUCT U.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND FOR BET CONSTRUCT (UGANDA)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Set of Images -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="imgs/TURKISH TECHNOLOGY.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                    <div class="card-body">
+                        <p class="card-text">FINISHED STAND FOR TURKISH TECHNOLOGY.</p>
+                    </div>
+                </div>
+            </div>
+            
+                <!-- Second Set of Images -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="imgs/Pay-Retailer.jpg" class="card-img-top constructed-image" alt="Constructed Image">
+                        <div class="card-body">
+                            <p class="card-text">FINISHED STAND FOR PAY-RETAILER (UGANDA).</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="clients-section text-center">
+    <div class="container">
+        <h2>Our Clients</h2>
+        <ul class="clients-list animated-list">
+            <li>ATLAS COPCO</li>
+            <li>BOLE MACHINERY</li>
+            <li>HAITIAN</li>
+            <li>NIGERIA CHAMBER OF COMMERCE</li>
+            <li>NIGERIA NAVY</li>
+            <li>LAGOS STATE UNIVERSITY</li>
+            <li>MONTGOMERY</li>
+            <li>DALEWARE</li>
+            <li>LAGOS STATE LOTTERY BOARD</li>
+            <li>GLOBAL BET</li>
+            <li>AKWAABA</li>
+            <li>UNITED BANK OF AFRICA</li>
+            <li>ZENITH BANK</li>
+            <li>JEREH TECHNOLOGIES</li>
+            <li>SRS COLLECTION</li>
+            <li>CHAMSACESS</li>
+            <li>PENSION CENTRA</li>
+            <li>DERMALOG</li>
+            <li>MELBET</li>
+            <li>WESTERN DIGITAL</li>
+            <li>EVENTUS INTERNATIONAL</li>
+            <li>CIPM (LAGOS BRANCH)</li>
+            <li>BETWINNER</li>
+            <li>PMG</li>
+            <li>SAFETY CONSULTANT LIMITED</li>
+            <li>HRM OFFICE LIMITED</li>
+            <li>ALDELIA GLOBAL MAN POWER</li>
+            <li>SHANGHAI JINDUN SPECIAL VEHICLE EQUIPMENT CO. LTD</li>
+            <li>XAVIER COMMUNICATION</li>
+            <li>SILKOAT PAINT</li>
+            <li>ENDEAVOR AFRICA GROUP</li>
+            <li>SPRING FOUNTAIN NIG LTD</li>
+            <li>TOTAL FACILITIES MANAGEMENT</li>
+            <li>PROVAST NIGERIA LTD</li>
+            <li>REGENESYS BUSINESS SCHOOL</li>
+            <li>LAGOS BUSINESS SCHOOL</li>
+            <li>COKESON TRAVEL AND TOUR</li>
+            <li>TEST ASSENSITY</li>
+        </ul>
+    </div>
+</section>
+
+
+
+
+
+<!-- JavaScript Section -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+        $('.clients-list li').each(function(i) {
+            $(this).delay(100 * i).queue(function() {
+                $(this).addClass('animated');
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('.clients-list li').each(function(i) {
+            $(this).delay(100 * i).queue(function() {
+                $(this).addClass('animated');
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('.constructed-image').on('click', function() {
+            $(this).toggleClass('enlarged');
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        let images = [ IMG, imgs/IMG-20240702-WA0030, 'hero3.jpg'];
+        let currentIndex = 0;
+
+        setInterval(function() {
+            currentIndex = (currentIndex + 1) % images.length;
+            $('.hero-section').css('background-image', 'url(' + images[currentIndex] + ')');
+        }, 5000);
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('.toggle-3d-images').on('click', function() {
+            $(this).siblings('.additional-3d-images').toggle();
+            $(this).text(function(i, text) {
+                return text === "Show More 3D Images" ? "Show Less 3D Images" : "Show More 3D Images";
+            });
+        });
+
+        $('.constructed-image').on('click', function() {
+            $(this).toggleClass('enlarged');
+        });
+    });
+</script>
+
+</body>
+</html>                            
